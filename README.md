@@ -1,4 +1,4 @@
-opa
+OPA
 ===
 
-OPA - Open Project Assistant
+Open Project Assistant - A journey with DDD and CQRS.
