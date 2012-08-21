@@ -16,7 +16,7 @@ Activity (
 	// TODO Types of activities? Enum?
 )
 
-Person (
+Person : Entity (
 	firstName EString
 	
 	lastName EString
@@ -28,7 +28,7 @@ Person (
 
 PersonCalendar ()
 
-Project (
+Project : Entity (
 	name EString
 	
 	// TODO Association object?
@@ -47,7 +47,7 @@ enum Role (
 	STAKEHOLDER
 )
 
-Task (
+Task : Entity (
 	name EString
 	
 	estimatedEffortPD EInt
@@ -59,7 +59,7 @@ Task (
 	activities Activity*
 )
 
-Team (
+Team : Entity (
 	name EString
 	
 	childTeams Team*
@@ -87,7 +87,7 @@ TeamRole (
 	member TeamMember
 )
 
-Topic (
+Topic : Entity (
 	name EString
 	
 	// TODO: Either child topics OR tasks are allowed 
