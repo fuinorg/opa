@@ -1,0 +1,98 @@
+opa <http://www.devboost.de/opa>
+
+abstract Entity ()
+
+abstract ValueObject ()
+
+Activity (
+	person Person
+	
+	date EDate
+	
+	hours EDouble
+	
+	description EString
+	
+	// TODO Types of activities? Enum?
+)
+
+Person (
+	firstName EString
+	
+	lastName EString
+	
+	email EString
+	
+	gender EString
+)
+
+PersonCalendar ()
+
+Project (
+	name EString
+	
+	// TODO Association object?
+	teams Team*
+)
+
+ProjectCalendar ()
+
+enum Role (
+	ARCHITECT
+	PROJECTMANAGER
+	ANALYST
+	TESTER
+	ANY
+	DEVELOPER
+	STAKEHOLDER
+)
+
+Task (
+	name EString
+	
+	estimatedEffortPD EInt
+	
+	restEffortPD EInt
+	
+	~assignedTo TeamMember
+
+	activities Activity*
+)
+
+Team (
+	name EString
+	
+	childTeams Team*
+	
+	teamRoles TeamRole*
+	
+	lead Person
+	
+	topics Topic*
+)
+
+TeamMember (
+	// ~ denotes a non-containment reference (i.e. not in aggregate)
+	~person Person
+	
+	// TODO Not more than 80% for a person (20% is holidays, ...)
+	percentCapacity EInt
+)
+
+TeamRole (
+	role Role
+	
+	count EInt
+	
+	member TeamMember
+)
+
+Topic (
+	name EString
+	
+	// TODO: Either child topics OR tasks are allowed 
+	
+	childTopics Topic*
+	
+	tasks Task*
+)

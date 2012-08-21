@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opa="http://www.devboost.de/opa" xsi:schemaLocation="http://www.devboost.de/opa ../model/opa.ecore">
+  <opa:Person firstName="Max" lastName="Musterarchitekt"/>
+  <opa:Person firstName="Emil" lastName="Musterentwickler"/>
+  <opa:Team name="Team1">
+    <teamRoles count="1">
+      <member person="/0"/>
+    </teamRoles>
+    <teamRoles count="1">
+      <member person="/1"/>
+    </teamRoles>
+    <topics name="Topic A">
+      <tasks name="First Task" assignedTo="/2/@teamRoles.0/@member"/>
+      <tasks name="Second Task" assignedTo="/2/@teamRoles.1/@member"/>
+    </topics>
+  </opa:Team>
+</xmi:XMI>

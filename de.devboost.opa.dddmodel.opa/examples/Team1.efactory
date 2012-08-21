@@ -1,0 +1,45 @@
+use "../model/opa.ecore"
+
+new Person Max {
+	firstName = "Max"
+	lastName = "Musterarchitekt"
+}
+
+new Person Emil {
+	firstName = "Emil"
+	lastName = "Musterentwickler"
+}
+
+new Team {
+	name = "Team1"
+	
+	teamRoles += new TeamRole {
+		//role = ARCHITECT
+		count = 1
+		
+		member = new TeamMember M1 {
+			person = Max
+		}
+	}
+	
+	teamRoles += new TeamRole {
+		//role = DEVELOPER
+		count = 1	
+		member = new TeamMember M2 {
+			person = Emil
+		}
+	}
+	
+	topics += new Topic {
+		name = "Topic A"
+		
+		tasks += new Task {
+			name = "First Task"
+			assignedTo = M1
+		}
+		tasks += new Task {
+			name = "Second Task"
+			assignedTo = M2
+		}
+	}
+}
