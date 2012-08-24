@@ -1,6 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: OPA DDD Model
-Bundle-SymbolicName: de.devboost.opa.dddmodel.opa
+Bundle-Name: %pluginName
+Bundle-SymbolicName: de.devboost.opa.dddmodel.opa;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.devboost.opa.dddmodel.opa,
+ de.devboost.opa.dddmodel.opa.impl,
+ de.devboost.opa.dddmodel.opa.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
